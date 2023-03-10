@@ -2,6 +2,7 @@ body {
 font-family: Arial, Helvetica, sans-serif;
 font-weight: 800;
 background-color: rgba(224, 209, 242, 0.224);
+font-size: 1.6rem;
 }
 
 .container {
@@ -9,6 +10,7 @@ background-color: rgba(224, 209, 242, 0.224);
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	width: 120rem;
 }
 
 .heading {
@@ -18,8 +20,9 @@ background-color: rgba(224, 209, 242, 0.224);
 	max-width: 100vh;
 }
 .accordion__item {
-	font-size: 2rem;
-	color: #2d2a2a;
+	width: 100%;
+	font-size: 1.6rem;
+	color: #240cad;
 	padding: 1rem 0;
 	border-top: 0.0625rem solid rgb(107, 16, 235);
 }
@@ -39,13 +42,10 @@ background-color: rgba(224, 209, 242, 0.224);
 	margin-left: auto;
 	margin-right: auto; 
 }
-.xmark {
-	display: none;
-}
 .plus {
-	display: block;
-	width: 4%;
-	height: 4%;
+	visibility: hidden;
+	width: 2%;
+	height: 2%;
 }
 .accordion__img img{
 	max-width: 100%;
@@ -54,23 +54,15 @@ background-color: rgba(224, 209, 242, 0.224);
 display: block;
 }
 input:checked ~ label .plus {
+	visibility: hidden;
 	transform: rotate(45deg);
-	}
-
-/* .tab,
-.content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
-.tabs__items {
-	display: flex;
-	flex-direction: column;
+.accordion__item :checked ~ .accordion__label {
+	color: rgb(40, 15, 77);
 }
-.tabs__item {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-} */
+.accordion:hover > .accordion__item {
+	color: rgb(0, 0, 0);
+}
+.accordion:hover > .accordion__item .accordion__label .plus{
+	visibility: visible;
+}

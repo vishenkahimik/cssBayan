@@ -1,68 +1,104 @@
 body {
-font-family: Arial, Helvetica, sans-serif;
-font-weight: 800;
-background-color: rgba(224, 209, 242, 0.224);
-font-size: 1.6rem;
-}
-
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 120rem;
-}
-
-.heading {
-	font-size: 3.5rem;
-}
-.accordion {
-	max-width: 100vh;
-}
-.accordion__item {
-	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 800;
+	background-color: rgba(224, 209, 242, 0.224);
 	font-size: 1.6rem;
-	color: #240cad;
-	padding: 1rem 0;
-	border-top: 0.0625rem solid rgb(107, 16, 235);
-}
-.accordion__item input,
-.accordion__img {
-	display: none;
-}
-.accordion__label {
-	 display: flex;
-	 justify-content: space-between;
-}
-.accordion__img {
-	width: 30%;
-	margin: 0 auto;
-}
-.accordion__img-pic {
-	margin-left: auto;
-	margin-right: auto; 
-}
-.plus {
-	visibility: hidden;
-	width: 2%;
-	height: 2%;
-}
-.accordion__img img{
-	max-width: 100%;
-}
-.accordion__item :checked ~ .accordion__img {
-display: block;
-}
-input:checked ~ label .plus {
-	visibility: hidden;
-	transform: rotate(45deg);
-}
-.accordion__item :checked ~ .accordion__label {
-	color: rgb(40, 15, 77);
-}
-.accordion:hover > .accordion__item {
-	color: rgb(0, 0, 0);
-}
-.accordion:hover > .accordion__item .accordion__label .plus{
-	visibility: visible;
-}
+	}
+	
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.heading {
+		font-size: 3.5rem;
+	}
+	.accordion {
+		max-width: 100vh;
+	}
+	.accordion__item {
+		width: 100%;
+		font-size: 1.6rem;
+		color: #240cad;
+		padding: 1rem 0;
+		border-top: 0.0625rem solid rgb(107, 16, 235);
+	}
+	.accordion__item input,
+	.accordion__img {
+		display: none;
+	}
+	.accordion__label {
+		 display: flex;
+		 justify-content: space-between;
+	}
+	.accordion__img {
+		width: 30%;
+		margin: 0 auto;
+		padding: 0 30% 0 30%;
+		transition: all 0.5s ease-in;
+	}
+	.plus {
+		visibility: hidden;
+		width: 2%;
+		height: 2%;
+		opacity: 0;
+	}
+	.accordion__img img{
+		max-width: 100%;
+	}
+	.accordion__item :checked ~ .accordion__img {
+	display: block;
+	animation: opacityToggle 0.7s;
+	
+	}
+	.accordion__item :checked ~ label .plus {
+		visibility: hidden;
+		transform: rotate(45deg);
+	}
+	.accordion__item :checked ~ .accordion__label {
+		color: rgb(40, 15, 77);
+	}
+	.accordion:hover > .accordion__item {
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		color: rgb(0, 0, 0);
+	}
+	.accordion:hover > .accordion__item .accordion__label .plus{
+		visibility: visible;
+		opacity: 1;
+		transition: all 0.5s ease-in;
+	}
+	.accordion__item:hover > .accordion__img {
+		display: block;
+		animation: opacityToggle 0.7s;
+	}
+	.accordion__item :active ~ .accordion__label {
+		color: rgb(21, 116, 232);
+	}
+	.accordion__item :active ~ .accordion__img,
+	.accordion__item :active {
+		opacity: 0.6;
+	}
+	.accordion :active ~ .accordion__img,
+	.accordion :active {
+		opacity: 0.6;
+	}
+	@keyframes opacityToggle {
+		0%{
+		  opacity: 0;
+		}
+		25%{
+			opacity: 0.25;
+		}
+		50%{
+			opacity: 0.5;
+		}
+		75%{
+			opacity: 0.75;
+		}
+		100%{
+		  opacity: 1;
+		}
+	}

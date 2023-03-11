@@ -10,6 +10,7 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 0 1rem 0 1rem;
 	}
 	
 	.heading {
@@ -102,3 +103,27 @@ body {
 		  opacity: 1;
 		}
 	}
+	@media screen and (max-width: 720px) {
+		.heading {
+			font-size: 1.7rem;
+		}
+		.accordion__item {
+			font-size: 1.1rem;
+		}
+		.accordion:hover > .accordion__item {
+			cursor: none;
+			color: rgb(0, 0, 0);
+		}
+}
+@media screen and (max-width: 320px) {
+	.heading {
+		font-size: 1.5rem;
+	}
+	.accordion__item {
+		font-size: 0.5rem;
+	}
+	.accordion:hover > .accordion__item {
+		cursor: none;
+		color: rgb(0, 0, 0);
+	}
+}

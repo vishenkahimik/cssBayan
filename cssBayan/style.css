@@ -37,7 +37,7 @@ body {
 	.accordion__img {
 		width: 30%;
 		margin: 0 auto;
-		padding: 0 30% 0 30%;
+		padding: 1% 30% 0 30%;
 		transition: all 0.5s ease-in;
 	}
 	.plus {
@@ -52,8 +52,8 @@ body {
 	.accordion__item :checked ~ .accordion__img {
 	display: block;
 	animation: opacityToggle 0.7s;
-	
 	}
+	
 	.accordion__item :checked ~ label .plus {
 		visibility: hidden;
 		transform: rotate(45deg);
@@ -61,7 +61,8 @@ body {
 	.accordion__item :checked ~ .accordion__label {
 		color: rgb(40, 15, 77);
 	}
-	.accordion:hover > .accordion__item {
+	.accordion:hover > .accordion__item > .accordion__label,
+	.accordion:hover > .accordion__item  {
 		cursor: pointer;
 		transition: all 0.5s ease-in-out;
 		color: rgb(0, 0, 0);

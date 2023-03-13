@@ -26,7 +26,7 @@ body {
 		padding: 1rem 0;
 		border-top: 0.0625rem solid rgb(107, 16, 235);
 	}
-	.accordion__item input {
+	input {
 		display: none;
 	}
 	.accordion__img {

@@ -26,32 +26,37 @@ body {
 		padding: 1rem 0;
 		border-top: 0.0625rem solid rgb(107, 16, 235);
 	}
-	.accordion__item input,
-	.accordion__img {
+	.accordion__item input {
 		display: none;
+	}
+	.accordion__img {
+		width: 0;
+		transition: all 0.5s ease-in;
 	}
 	.accordion__label {
 		 display: flex;
 		 justify-content: space-between;
 	}
-	.accordion__img {
+	/* .accordion__img {
 		width: 30%;
 		margin: 0 auto;
 		padding: 1% 30% 0 30%;
-		transition: all 0.5s ease-in;
-	}
+	} */
 	.plus {
 		visibility: hidden;
 		width: 2%;
 		height: 2%;
 		opacity: 0;
 	}
-	.accordion__img img{
-		max-width: 100%;
+	.pic {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-	.accordion__item :checked ~ .accordion__img {
-	display: block;
-	animation: opacityToggle 0.7s;
+	.accordion__item :checked ~ .accordion__label > .accordion__img {
+		width: 30%;
+		margin: 0 auto;
+		padding: 1% 30% 0 30%;
 	}
 	
 	.accordion__item :checked ~ label .plus {
@@ -72,8 +77,8 @@ body {
 		opacity: 1;
 		transition: all 0.5s ease-in;
 	}
-	.accordion__item:hover > .accordion__img {
-		display: block;
+	.accordion__item:hover > .accordion__label > .accordion__img {
+		width: 30%;
 		animation: opacityToggle 0.7s;
 	}
 	.accordion__item :active ~ .accordion__label {

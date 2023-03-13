@@ -37,11 +37,6 @@ body {
 		 display: flex;
 		 justify-content: space-between;
 	}
-	/* .accordion__img {
-		width: 30%;
-		margin: 0 auto;
-		padding: 1% 30% 0 30%;
-	} */
 	.plus {
 		visibility: hidden;
 		width: 2%;
